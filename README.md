@@ -9,6 +9,8 @@ It is necessary to divide the points by planes.
 
 ## Example
 
+![example_1](https://user-images.githubusercontent.com/30512240/185460025-924423de-308a-4852-be44-aad1d4a834ce.png)
+![example_2](https://user-images.githubusercontent.com/30512240/185460028-16e3d725-375d-42e5-9f22-d1caf075eece.png)
 
 
 ## Building
@@ -53,7 +55,3 @@ $ python main.py
 ```
 
 ========================
-Комментарий:
-По визуализатору не всё, что хотел успел сделать.
--Данные по точкам берёт из файлов с названиями points_wrong.txt и points_good.txt.
--Данные по плоскостям захардкожены в main.py.
