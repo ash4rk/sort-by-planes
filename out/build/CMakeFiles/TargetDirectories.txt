@@ -1,0 +1,3 @@
+/home/stroymaster/Ash4rk/VSCodeProjects/sort/out/build/CMakeFiles/rebuild_cache.dir
+/home/stroymaster/Ash4rk/VSCodeProjects/sort/out/build/CMakeFiles/sort_false_points.dir
+/home/stroymaster/Ash4rk/VSCodeProjects/sort/out/build/CMakeFiles/edit_cache.dir

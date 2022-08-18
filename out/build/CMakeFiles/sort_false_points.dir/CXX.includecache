@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/stroymaster/Ash4rk/VSCodeProjects/sort/main.cpp
+iostream
+-
+fstream
+-
+string
+-
+vector
+-
+
