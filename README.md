@@ -9,7 +9,7 @@ It is necessary to divide the points by planes.
 
 ## Example
 
-points.txt, planes.txt </b>
+<b>points.txt, planes.txt</b> <br />
 309453 points, 2 planes, sorted in 2.47 sec
 
 ![example_1](https://user-images.githubusercontent.com/30512240/185460025-924423de-308a-4852-be44-aad1d4a834ce.png)
