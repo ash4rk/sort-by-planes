@@ -30,15 +30,15 @@ struct Plane
     float d = (-a * x1 - b * y1 - c * z1);
 };
 
-std::vector<Plane> getPlanesFromFile(std::string url);
+const std::vector<Plane> getPlanesFromFile(const std::string& url);
 
-std::string selectWrongPoints(std::string initFileName, std::vector<Plane> planes);
+const std::string selectWrongPoints(const std::string& initFileName, const std::vector<Plane>& planes);
 
-bool isPointAtTheSameSideFromPlanes(Point point, std::vector<Plane> planes);
+const bool isPointAtTheSameSideFromPlanes(const Point& point, const std::vector<Plane>& planes);
 
-bool isPointOnThePositiveSide(Point point, Plane plane);
+const bool isPointOnThePositiveSide(const Point& point, const Plane& plane);
 
-float dotProduct(Point point, Plane plane);
+const float dotProduct(const Point& point, const Plane& plane);
 
 int main()
 {
@@ -90,7 +90,7 @@ int main()
     return 0;
 }
 
-std::vector<Plane> getPlanesFromFile(std::string fileName)
+const std::vector<Plane> getPlanesFromFile(const std::string& fileName)
 {
     std::ifstream initPlanesFile(fileName);
     float x1, y1, z1, x2, y2, z2, x3, y3, z3;
@@ -104,17 +104,17 @@ std::vector<Plane> getPlanesFromFile(std::string fileName)
     return planes;
 }
 
-bool isPointOnThePositiveSide(Point point, Plane plane)
+const bool isPointOnThePositiveSide(const Point& point, const Plane& plane)
 {
     return dotProduct(point, plane) > 0;
 }
 
-float dotProduct(Point point, Plane plane)
+const float dotProduct(const Point& point, const Plane& plane)
 {
     return point.x * plane.a + point.y * plane.b + point.z * plane.c + plane.d;
 }
 
-bool isPointAtTheSameSideFromPlanes(Point point, std::vector<Plane> planes)
+const bool isPointAtTheSameSideFromPlanes(const Point& point, const std::vector<Plane>& planes)
 {
     for (auto const &plane: planes)
     {
