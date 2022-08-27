@@ -116,9 +116,9 @@ float dotProduct(Point point, Plane plane)
 
 bool isPointAtTheSameSideFromPlanes(Point point, std::vector<Plane> planes)
 {
-    for (std::vector<Plane>::iterator it = planes.begin(); it != planes.end(); ++it)
+    for (auto const &plane: planes)
     {
-        if (!isPointOnThePositiveSide(point, *it))
+        if (!isPointOnThePositiveSide(point, plane))
         {
             return false;
         }
