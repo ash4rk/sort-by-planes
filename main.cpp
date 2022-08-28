@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-std::string DIR_PATH = "../../resources/"; // must be const
+#define DIR_PATH "../../resources/"
 
 struct Point
 {
