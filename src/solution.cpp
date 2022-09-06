@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <chrono>
 
 #include "point.hpp"
 #include "plane.hpp"
@@ -35,6 +36,8 @@ void Solution::run() {
 
     if (goodPointsFile.is_open() && wrongPointsFile.is_open())
     {
+        auto start = std::chrono::steady_clock::now();
+
         while (pointsFile >> x >> y >> z)
         {
             Point point{x, y, z};
@@ -49,6 +52,11 @@ void Solution::run() {
                 wrongPointsFile << point.x << " " << point.y << " " << point.z << std::endl;
             }
         }
+
+        auto end = std::chrono::steady_clock::now();
+        auto diff = end - start;
+        std::cout << std::chrono::duration <double, std::milli> (diff).count() << " ms" << std::endl;
+
         goodPointsFile.close();
         wrongPointsFile.close();
     }
