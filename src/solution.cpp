@@ -25,8 +25,12 @@ void Solution::run() {
     std::string wrongPointsFilePath = initPointsFileName;
     wrongPointsFilePath = (wrongPointsFilePath.insert(0, DIR_PATH)).insert(wrongPointsFilePath.length() - 4, "_wrong");
     std::string initPointsFilePath = initPointsFileName.insert(0, DIR_PATH);
-
-    std::ifstream pointsFile(initPointsFilePath);
+ 
+    std::ifstream pointsFile(initPointsFilePath, std::ifstream::binary);
+    if (!pointsFile)
+    {
+        std::cerr << "Error in [" << __PRETTY_FUNCTION__ << "]: " << error_t(errno);
+    }  
     std::fstream goodPointsFile;
     std::fstream wrongPointsFile;
     goodPointsFile.open(goodPointsFilePath, std::ios::out);
@@ -38,7 +42,7 @@ void Solution::run() {
     {
         auto start = std::chrono::steady_clock::now();
 
-        while (pointsFile >> x >> y >> z)
+	while (pointsFile >> x >> y >> z)
         {
             Point point{x, y, z};
             std::cout << "X: " << x << "Y: " << y << "Z: " << z << std::endl;

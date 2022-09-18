@@ -1,3 +1,5 @@
+#include <iostream>
+#include <string.h>
 #include <vector>
 #include <fstream>
 #include "point.hpp"
@@ -7,6 +9,10 @@
 const std::vector<Plane> getPlanesFromFile(const std::string& fileName)
 {
     std::ifstream initPlanesFile(fileName);
+    if (!initPlanesFile)
+    {
+        std::cerr << "Error in [" << __PRETTY_FUNCTION__ << "]: " << error_t(errno);
+    }
     float x1, y1, z1, x2, y2, z2, x3, y3, z3;
     std::vector<Plane> planes;
     while (initPlanesFile >> x1 >> y1 >> z1 >> x2 >> y2 >> z2 >> x3 >> y3 >> z3)
