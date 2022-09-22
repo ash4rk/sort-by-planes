@@ -1,7 +1,8 @@
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <vector>
 #include <fstream>
+
 #include "point.hpp"
 #include "plane.hpp"
 #include "operations.hpp"
